@@ -4,8 +4,11 @@ def print_header
 end
 
 def print_names(students)
-  students.each_with_index do |student, index|
-    print "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort) \n"
+  # students.each.with_index(1) do |student, index|
+  i = 0
+  while i < students.length do 
+    puts "#{students[i][:name]} (#{students[i][:cohort]} cohort) \n"
+    i += 1 #if (student[:name].downcase.start_with?("a") && student[:name].length < 4)
   end
 end
 
@@ -34,5 +37,5 @@ end
 
 students = input_students
 print_header
-print_names(students)
+print_names(students) 
 print_footer(students)
